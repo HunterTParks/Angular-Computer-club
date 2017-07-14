@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from '../person';
 import { PersonComponent } from '../person-service/person.component';
 import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-lineup',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class LineupComponent implements OnInit {
-  lineup: Person[];
+  lineup: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private personService: PersonComponent) { }
 
