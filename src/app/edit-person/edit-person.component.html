@@ -1,3 +1,14 @@
-<p>
-  edit-person works!
-</p>
+<h4>Edit Person</h4>
+
+<label>Name: </label>
+<input [(ngModel)] = "selectedPerson.name">
+<br>
+
+<label>Age: </label>
+<input [(ngModel)] = "selectedPerson.age">
+<br>
+
+<label>Description: </label>
+<input [(ngModel)] = "selectedPerson.description">
+
+<button (click) = "StartUpdatePerson(selectedPerson)">Update</button>

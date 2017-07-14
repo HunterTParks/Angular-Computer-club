@@ -22,4 +22,10 @@ export class PersonComponent {
   getPersonById(PersonId: string){
     return this.database.object('People/' + PersonId)
   }
+
+  updatePerson(updatePerson){
+    console.log("TEST");
+    var personInFireBase = this.getPersonById(updatePerson.$key);
+    personInFireBase.update({name: updatePerson.name, age: updatePerson.age, description: updatePerson.description});
+  }
 }
