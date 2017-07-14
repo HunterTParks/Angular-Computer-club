@@ -1,6 +1,6 @@
 <h2>Lineup</h2>
 
-<div *ngFor = "let person of lineup" (click) = "goToAboutPage(person)">
+<div *ngFor = "let person of lineup | async" (click) = "goToAboutPage(person)" class = "panel panel-default">
   <div class="panel-body">
     <h3><em>{{person.name}}</em></h3>
   </div>

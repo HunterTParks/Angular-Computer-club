@@ -14,7 +14,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class LineupComponent implements OnInit {
   lineup: FirebaseListObservable<any[]>;
 
-  constructor(private router: Router, private personService: PersonComponent) { }
+  constructor(private router: Router, private personService: PersonComponent) {  console.log(this.lineup); }
 
   ngOnInit() {
     this.lineup = this.personService.getLineUp();

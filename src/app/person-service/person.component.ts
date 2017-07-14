@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../person';
-import { PERSON } from '../mock-lineup';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { PERSON } from '../mock-lineup';
 
 @Injectable()
 export class PersonComponent {
   Lineup: FirebaseListObservable<any[]>;
   constructor(private database: AngularFireDatabase) {
-    this.Lineup = database.list('Lineup');
+    this.Lineup = database.list('People');
   }
 
   getLineUp(){
+    console.log(this.database.list('Lineup'));
     return this.Lineup;
   }
 
@@ -20,5 +21,6 @@ export class PersonComponent {
         return PERSON[i];
       }
     }
+    return PERSON[i];
   }
 }
