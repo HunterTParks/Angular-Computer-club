@@ -5,7 +5,7 @@ import { PersonComponent } from '../person-service/person.component';
   selector: 'app-edit-person',
   templateUrl: './edit-person.component.html',
   styleUrls: ['./edit-person.component.css'],
-  providers: [PersonComponent]
+  providers: [ PersonComponent ]
 })
 export class EditPersonComponent implements OnInit {
   @Input() selectedPerson;
@@ -19,4 +19,10 @@ export class EditPersonComponent implements OnInit {
     this.PersonService.updatePerson(personToUpdate);
   }
 
+  StartDeletePerson(personToDelete){
+    if(confirm("WARNING: Are you sure you want to delete this entry?")){
+      console.log("TEST");
+      this.PersonService.deletePerson(personToDelete);
+    }
+  }
 }

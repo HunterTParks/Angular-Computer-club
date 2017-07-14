@@ -20,12 +20,19 @@ export class PersonComponent {
   }
 
   getPersonById(PersonId: string){
+    console.log('People/' + PersonId);
     return this.database.object('People/' + PersonId)
   }
 
   updatePerson(updatePerson){
-    console.log("TEST");
     var personInFireBase = this.getPersonById(updatePerson.$key);
     personInFireBase.update({name: updatePerson.name, age: updatePerson.age, description: updatePerson.description});
+  }
+
+  deletePerson(localPersonToDelete){
+    // console.log(localPersonToDelete);
+    // console.log(this.getPersonById(localPersonToDelete.$key));
+    var personEntryInFirebase = this.getPersonById(localPersonToDelete.$key);
+    personEntryInFirebase.remove();
   }
 }
