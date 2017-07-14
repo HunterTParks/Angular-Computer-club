@@ -6,10 +6,6 @@ import { LineupComponent } from './lineup/lineup.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    component: AppComponent
-  },
-  {
     path: 'about',
     component: AboutComponent
   },
