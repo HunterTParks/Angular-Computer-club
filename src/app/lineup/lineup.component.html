@@ -1,5 +1,19 @@
-<h2>Lineup</h2>
+<div class = "well" *ngIf="AddPerson === '/lineup'">
+  <h2>Add person?</h2>
 
+  <label>Name: </label>
+  <input #newName>
+  <br>
+  <label>Age: </label>
+  <input #newAge>
+  <br>
+  <label>Description </label>
+  <input #newDescription>
+  <br>
+  <button (click) = "submitForm(newName.value, newAge.value, newDescription.value); newName.value = ''; newAge.value = ''; newDescription.value = '';">Submit</button>
+</div>
+<br>
+<h2>Lineup</h2>
 <div *ngFor = "let person of lineup | async" class = "panel panel-default">
   <h3 (click)="goToAboutPage(person)"><em>{{person.name}}</em></h3>
   <div class="panel-body">

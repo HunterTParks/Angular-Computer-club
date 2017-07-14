@@ -14,6 +14,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class LineupComponent implements OnInit {
   lineup: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  AddPerson: string = this.router.url;
 
   constructor(private router: Router, private personService: PersonComponent) {  }
 
@@ -23,6 +24,11 @@ export class LineupComponent implements OnInit {
 
   goToAboutPage(clickedPerson){
     this.router.navigate(['lineup', clickedPerson.$key])
+  }
+
+  submitForm(name: string, age: number, description: string, id: string){
+    var newPerson: Person = new Person(name, age, description);
+    this.personService.addPerson(newPerson);
   }
 
 }
