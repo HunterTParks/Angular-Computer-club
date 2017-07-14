@@ -1,0 +1,16 @@
+{
+  "People": [
+    {
+      "Name": "Richie",
+      "age": 16,
+      "description": "Loves coding and music!",
+      "id": 1
+    },
+    {
+      "Name": "Sarah",
+      "age": 23,
+      "description": "I love giving kids opportunities to further their education",
+      "id": 2
+    }
+  ]
+}
