@@ -20,8 +20,8 @@ export class LineupComponent implements OnInit {
     this.lineup = this.personService.getLineUp();
   }
 
-  goToAboutPage(clickedPerson: Person){
-    this.router.navigate(['lineup', clickedPerson.id])
+  goToAboutPage(clickedPerson){
+    this.router.navigate(['lineup', clickedPerson.$key])
   }
 
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Person } from '../person';
 import { PersonComponent } from '../person-service/person.component';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-person-detail',
@@ -12,7 +13,7 @@ import { PersonComponent } from '../person-service/person.component';
 })
 export class PersonDetailComponent implements OnInit {
   PersonId: string;
-  PersonToDisplay: Person;
+  PersonToDisplay;
 
   constructor(
     private route: ActivatedRoute,
