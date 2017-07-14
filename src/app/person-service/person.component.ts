@@ -11,7 +11,7 @@ export class PersonComponent {
   }
 
   getLineUp(){
-    console.log(this.database.list('Lineup'));
+    console.log(this.database.list('People'));
     return this.Lineup;
   }
 
