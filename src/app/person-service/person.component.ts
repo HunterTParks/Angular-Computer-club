@@ -11,4 +11,11 @@ export class PersonComponent {
     return PERSON;
   }
 
+  getPersonById(PersonId: string){
+    for(var i = 0; i <= PERSON.length - 1; i++){
+      if(PERSON[i].id === PersonId){
+        return PERSON[i];
+      }
+    }
+  }
 }
