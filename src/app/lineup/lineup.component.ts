@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./lineup.component.css'],
   providers: [PersonComponent]
 })
+
 export class LineupComponent implements OnInit {
   lineup: Person[];
 
   constructor(private router: Router, private personService: PersonComponent) { }
 
   ngOnInit() {
+    this.lineup = this.personService.getLineUp();
   }
 
   goToAboutPage(clickedPerson: Person){
